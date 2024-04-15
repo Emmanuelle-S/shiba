@@ -29,10 +29,13 @@ nav a:hover {
     
 }
 
-.shibe-container img {
+#shibe-container img {
     display: flex;
-    flex-direction: column;
-    flex-basis: ;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: center;
 }
 
 h1 {
@@ -69,7 +72,7 @@ footer {
     color: #261e1e;
     text-align: center;
     padding: 1rem;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
 }
