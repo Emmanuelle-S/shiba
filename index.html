@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explorez une galerie captivante de photos de Shiba Inu, une race de chien japonaise ancienne et charmante. Découvrez des Shiba Inu blancs, des Shiba Inu de différentes couleurs, ainsi que des Shiba Inu noir et feu, des bébés Shiba Inu et des adultes."
+    />
+    <title>Photos de Shiba Inu | Galerie de Shiba Inu | Shiba Inu</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html">Accueil</a>
+        <a href="index-fille.html">Informations sur les Shiba Inu</a>
+      </nav>
+    </header>
+    <h1>Photos aléatoire de Shiba Inu</h1>
+    <div id="shibe-container" class="container"></div>
+
+    
+    <script>
+      async function fetchShibes(count = 1, urls = true, httpsUrls = true) {
+        const apiUrl = `http://shibe.online/api/shibes?count=${count}&urls=${urls}&httpsUrls=${httpsUrls}`;
+
+        try {
+          const response = await fetch(apiUrl);
+          const data = await response.json();
+          return data;
+        } catch (error) {
+          console.error("Erreur lors de la récupération des données:", error);
+          return null;
+        }
+      }
+
+      fetchShibes(6, true, true)
+        .then((shibes) => {
+          console.log("Liste de shiba inu:", shibes);
+        })
+        .catch((error) => {
+          console.error("Une erreur s'est produite:", error);
+        });
+
+      async function displayShibeUrls(
+        count = 1,
+        urls = true,
+        httpsUrls = true
+      ) {
+        const shibes = await fetchShibes(count, urls, httpsUrls);
+
+        const container = document.getElementById("shibe-container");
+
+        container.innerHTML = "";
+
+        shibes.forEach((url) => {
+          const img = document.createElement("img");
+          img.src = url;
+          img.alt = "Shiba Inu image";
+          img.style = " max-width: 300px; max-height:300px; object-fit: cover;"
+          container.appendChild(img);
+        });
+      }
+
+      displayShibeUrls(6, true, true).catch((error) => {
+        console.error(
+          "Une erreur s'est produite lors de l'affichage des URL des images:",
+          error
+        );
+      });
+    </script>
+    <footer>
+      <h3>Made by The Girlies</h3>
+      <p>Le Shiba Inu n'est pas qu'une cryptomonnaie</p>
+    </footer>
+  </body>
+</html>

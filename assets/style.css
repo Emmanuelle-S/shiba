@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+}
+
+header {
+    margin: auto 0;
+    background-color: #de985e;
+    padding: 16px;
+}
+
+nav {
+    width: 300px;
+    margin: auto;
+}
+
+nav a {
+    color: #261e1e;
+    text-decoration: none;
+    padding: 8px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.shibe-item {
+      
+    margin-right: 10px;
+    
+}
+
+.shibe-container img {
+    display: flex;
+    flex-direction: column;
+    flex-basis: ;
+}
+
+h1 {
+    font-size: 64px;
+    font-family: "Satisfy", cursive;
+    background: -webkit-linear-gradient(#f79503, #f1c605);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    font-family: "Satisfy", cursive;
+}
+
+.container-1 {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    gap: 60px;
+}
+
+.container-2 {
+    display: flex;
+    flex-direction: row-reverse;
+    max-width: 1200px;
+    margin: auto;
+    gap: 60px;
+}
+
+footer {
+    background-color: #de985e;
+    color: #261e1e;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
